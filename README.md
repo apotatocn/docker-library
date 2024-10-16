@@ -3,102 +3,126 @@
 [![GitHub Release Date](https://img.shields.io/github/release-date/Websoft9/docker-library)](https://github.com/Websoft9/docker-library)
 [![GitHub Repo stars](https://img.shields.io/github/stars/Websoft9/docker-library?style=social)](https://github.com/Websoft9/docker-library)
 
-# Awesome Docker Compose Examples
+# 优秀的Docker编写示例
 
-This repository include [200+ Examples](https://github.com/Websoft9/docker-library/tree/main/apps) based on [Docker compose](https://docs.docker.com/compose/), e.g WordPress, MySQL, Odoo, MongoDB, GitLab, Elastic, Ghost, Grafana, Graylog, Kafka, n8n, Moodle, Nextcloud, ONLYOFFICE, phpMyAdmin...
+此存储库包括[200+示例](https://github.com/Websoft9/docker-library/tree/main/apps)基于〔Docker
+compose〕(https://docs.docker.com/compose/)
+例如WordPress、MySQL、Odoo、MongoDB、GitLab、Elastic、Ghost、Grafana、Graylog、Kafka、n8n、Moodle、Nextcloud、ONLYOFFICE、phpMyAdmin。。。
+您可以将它们用于业务管理、内容管理、数据分析、开发、DevOps和任何您想做的事情。
 
-You can use them for bussiness management, content management, data analysis, development, DevOps and any things you want to do.  
+## 图像来自哪里？
 
-## Where image from?
+所有Docker镜像均来自软件官方或权威第三方（如：Bitnami），Websoft9不维护镜像。
 
-All Docker image come from the Official of the software or an authoritative third party (such as: Bitnami), and Websoft9 does not maintain the image.  
+Websoft9仅对官方提供的镜像或docker compose进行验证和测试，以确保它们可以直接使用**docker compose up**运行，而无需任何配置。
 
-Websoft9 only verify and test the image or docker compose provided by the official to ensure that they can be run directly with **docker compose up** without any configuration.
+## 如何使用它？
 
-## How to use it?
+最简单的方法是安装[Websoft9](https://github.com/Websoft9/websoft9)这可以帮助您在基于web的控制台上运行这些应用程序。
 
-The easiest way is install [ Websoft9](https://github.com/Websoft9/websoft9) which can help you running these applications on web-based console.  
+当然，你也可以使用Docker compose来运行这些应用程序：
 
-Of course, you can also use Docker compose to running these application: 
-
-1. Make sure you have install the Docker latest or you can install Docker by below script
+1.确保你已经安装了最新的Docker，或者你可以通过下面的脚本安装Docker
 
    ```
    curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh && sudo systemctl enable docker && sudo systemctl start docker
    ```
 
-2. Download this repository to your Linux and list all applications
-
+2. 将此存储库下载到您的Linux并列出所有应用程序
    ```
    git clone --depth=1 https://github.com/Websoft9/docker-library
    cd docker-library && ls apps
    ```
 
-3. Go to the target app directory, check or modify the [.env](https://github.com/Websoft9/docker-library/blob/main/docs/code_owner.md#environment-variables), then run it
+3.
+转到目标应用程序目录，检查或修改[.env](https://github.com/Websoft9/docker-library/blob/main/docs/code_owner.md#environment-变量），然后运行它
 
-   ```
-   # e.g install wordpress
-   cd apps/wordpress
-   sudo docker network create websoft9 &&  sudo docker compose up -d
-   ```
+```
+# e.g install wordpress
+cd apps/wordpress
+sudo docker network create websoft9 &&  sudo docker compose up -d
+```
+4. 添加国内镜像源
+```
+vim /etc/docker/daemon.json
+{
+    "registry-mirrors": ["https://docker.m.daocloud.io"]
+}
+```
+目前可用的镜像源：
+- https://docker.m.daocloud.io
+- https://dockerpull.com
+- https://atomhub.openatom.cn
+- https://docker.1panel.live
+- https://dockerhub.jobcher.com
+- https://hub.rat.dev
+- https://docker.registry.cyou
+- https://docker.awsl9527.cn
+- https://do.nark.eu.org/
+- https://docker.ckyl.me
+- https://hub.uuuadc.top
+- https://docker.chenby.cn
+- https://docker.ckyl.me
 
-## How to contribute it?
+## 如何贡献它？
 
-We greatly welcome community contributions to provide suggestions and improvements to our project:
+我们非常欢迎社区为我们的项目提供建议和改进：
 
-1. Find a bug, request features and provide better methods, you can promote your ideas through [issue](https://github.com/Websoft9/docker-library/issues).
+1.发现bug，请求功能并提供更好的方法，您可以通过[问题]推广您的想法(https://github.com/Websoft9/docker-library/issues).
 
-2. Contributing to this repository, please follow our [contribution guidelines](CONTRIBUTING.md). We try our best to provide [reward](./docs/reward.md) for some important task.
+2.请按照我们的[贡献指南]（Contributing.md）为这个存储库做出贡献。我们尽最大努力为一些重要任务提供[reward]
+（./docs/reward.md）。
 
-## Documentation
+## 文档
 
 [Websoft9 Administrator Guide](https://support.websoft9.com/docs/apps)
 
-## Support
+## 支持
 
-You can subscribe [Websoft9 Enterprise Support](https://www.websoft9.com/apps) to ensure high availability of applications and more:
+您可以订阅[Weboft9企业支持](https://www.websoft9.com/apps)以确保应用程序的高可用性等：
 
-- Knowledge: Answers and guidance from product experts
-- Support: Everything you need for technical support, e.g Enable HTTPS, Upgrade guide
-- Security: Security services and tools to protect your software
+- 知识：产品专家的答案和指导
+- 支持：技术支持所需的一切，例如启用HTTPS、升级指南
+- 安全：保护软件的安全服务和工具
 
-## Sponsor
+## 赞助商
 
-The following corporate organizations have provided us with sponsorship, which has greatly helped this repository.
+以下公司组织为我们提供了赞助，这极大地帮助了这个存储库。
 
 ![image](https://libs.websoft9.com/Websoft9/logo/sponser/50sponser-huawei-logo.png) ![image](https://libs.websoft9.com/Websoft9/logo/sponser/50sponser-mingdaoyun-logo.png) ![image](https://libs.websoft9.com/Websoft9/logo/sponser/50sponser-apitable-logo.png)
 
-## License
+## 许可证
 
-[LGPL-3.0](LICENSE.md), Additional Terms: It is not allowed to publish free or paid image based on this repository in any Cloud platform's Marketplace without authorization.
+[LGPL-3.0](LICENSE.md), 附加条款：未经授权，不得在任何云平台的Marketplace中发布基于此存储库的免费或付费图像。
 
-## Disclaimer
+## 免责声明
 
-We can't guarantee the open source software does not have vulnerability or the security risks which is the responsibility of user according to the open source licenses.
+我们不能保证开源软件没有漏洞或安全风险，根据开源许可证，这是用户的责任。
 
-## App Wishlist
+## 应用程序愿望清单
 
-Propose and vote for [apps](wishlist.md) to be packaged
+提议并投票支持[应用程序]（wishlist.md）打包
 
 ## FAQ
 
-#### Do I need to change the password before docker-compose up?
+#### 我需要在docker编写之前更改密码吗？
 
-Yes, you should modify **W9_POWER_PASSWORD** at .env file for production
+是的，您应该在.env文件中修改**W9_POWER_PASSWORD**以用于生产
 
-#### Docker runing failed for the reason that port conflict?
+#### Docker运行失败是因为端口冲突吗？
 
-You should modify **APP\_\*\_PORT** at .env file
+您应该在.env文件中修改**APP\_\*\_PORT**
 
-#### What the credentials for application?
+#### 申请的资格证书是什么？
 
 W9_LOGIN_USER, W9_LOGIN_PASSWORD
 
-#### Is there any infrastructure limit?
+#### 基础设施有限制吗？
 
-No, you can use lots of infrastructure, e.g.
+不，您可以使用许多基础设施，例如。
 
 - **OS**: Red Hat, CentOS, Debian, Ubuntu or other's Linux OS ...
-- **Public Cloud**: More than 20+ major Cloud such as AWS, Azure, Google Cloud, Alibaba Cloud, HUAWEIClOUD, Oracle Cloud ...
+- **Public Cloud**: More than 20+ major Cloud such as AWS, Azure, Google Cloud, Alibaba Cloud, HUAWEIClOUD, Oracle
+  Cloud ...
 - **Private Cloud**: KVM, VMware, VirtualBox, OpenStack ...
 - **ARCH**: Linux x86-64, ARM 32/64, x86/i686 ...
